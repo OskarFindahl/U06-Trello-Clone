@@ -22,7 +22,7 @@
 
 
 
-      var divTabs = $('<div></div>').attr('id','tabs');
+      var divTabs = $('<div></div>').attr('class','tabs');
       
       var ulTabs = $('<ul></ul>');
       var liTabs1 = $('<li></li>');
@@ -42,11 +42,8 @@
       var pTab3 = $('<p></p>').text("Tab info 3");
 
 
-
-
-
-
       $('#sortable1').append(li);
+
       li.append(button);
       button.append(div);
       div.append(p);
@@ -73,7 +70,7 @@
 
 
 
-      $( "#tabs" ).tabs();
+      
 
       $("." + taskID).dialog({
         autoOpen: false,
@@ -82,6 +79,8 @@
           duration: 200
         },
       });
+
+      $( ".tabs" ).tabs();
 
       taskID ++;
 
