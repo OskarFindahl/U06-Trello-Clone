@@ -9,11 +9,12 @@
     
 
 
-    let taskID = 1;
+    let taskID = 1; //For taskCards
+
     $(".create-task-button").on("click", function() {
 
 
-      
+      //Creats card with dialog element
       var li = $('<li></li>').text('Task: ' + taskID);
       var button = $('<button></button>').attr('type','button').attr('id',taskID).attr('class','dialog-button').text('Dialog');
       var div = $('<div></div>').attr('class',taskID).attr('title','Basic dialog');
@@ -22,6 +23,7 @@
 
 
 
+      //Creats Tabs
       var divTabs = $('<div></div>').attr('class','tabs');
       
       var ulTabs = $('<ul></ul>');
@@ -39,15 +41,18 @@
       var pTab2 = $('<p></p>').text("Tab info 2");
 
       var divTab3 = $('<div></div>').attr('id','tabs-3');
-      var pTab3 = $('<p></p>').text("Tab info 3");
+      var pTab3 = $('<p></p>').text('Date: ');
+      var date = $('<input></input>').attr('type','text').attr('class','datepicker');
 
 
+      //Append dialog 
       $('#sortable1').append(li);
 
       li.append(button);
       button.append(div);
       div.append(p);
 
+      //Append tabs
       li.append(divTabs);
       divTabs.append(ulTabs);
       ulTabs.append(liTabs1);
@@ -57,8 +62,6 @@
       liTabs2.append(aTabs2);
       liTabs3.append(aTabs3);
      
-    
-
       divTabs.append(divTab1);
       divTab1.append(pTab1);
 
@@ -67,11 +70,14 @@
 
       divTabs.append(divTab3);
       divTab3.append(pTab3);
+      pTab3.append(date);
 
 
-
+//Create Datepicker
+     
       
 
+      //Creates Dialog
       $("." + taskID).dialog({
         autoOpen: false,
         show: {
@@ -79,11 +85,19 @@
           duration: 200
         },
       });
+      
+      
 
+      //Creates Tabs
       $( ".tabs" ).tabs();
 
+      $( ".datepicker" ).datepicker();
+
+
+      //Incriment taskID for taskCards
       taskID ++;
 
+      //Activate Dialog Button 
       $( ".dialog-button" ).on( "click", function() {
         let classId =  $(this).prop('id');
         $("." + classId).dialog("open");
