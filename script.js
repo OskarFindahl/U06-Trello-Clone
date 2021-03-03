@@ -73,7 +73,7 @@
       pTab3.append(date);
 
 
-//Create Datepicker
+
      
       
 
@@ -91,6 +91,8 @@
       //Creates Tabs
       $( ".tabs" ).tabs();
 
+
+      //Create Datepicker
       $( ".datepicker" ).datepicker();
 
 
