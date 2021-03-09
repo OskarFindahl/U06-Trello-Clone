@@ -7,21 +7,35 @@
     <title>U06-Trello-Clone</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <link
       rel="stylesheet"
       href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
     <link rel="stylesheet" href="/resources/demos/style.css" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <script src="/script.js"></script>
   </head>
   <body>
-    <ul id="sortable1" class="list">
-      <button type="button" class="create-task-button">+</button>
-    </ul>
+    <div class="flex flex-row">
+      <ul id="sortable1" class="list w-96 bg-red-300 text-4xl">
+        Todo
+        <button type="button" class="create-task-button bg-red-300">+</button>
+      </ul>
 
-    <ul id="sortable2" class="list"></ul>
+      <ul id="sortable2" class="list w-96 bg-red-100 text-4xl">
+        Doing
+      </ul>
 
-    <ul id="sortable3" class="list"></ul>
+      <ul id="sortable3" class="list w-96 bg-red-200 text-4xl">
+        Done
+      </ul>
+    </div>
+
+    <button type="button" id="test" class="bg-pink-500">Test</button>
   </body>
 </html>
