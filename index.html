@@ -21,21 +21,32 @@
     <script src="/script.js"></script>
   </head>
   <body>
-    <div class="flex flex-row">
-      <ul id="sortable1" class="list w-96 bg-red-300 text-4xl">
-        Todo
-        <button type="button" class="create-task-button bg-red-300">+</button>
+    <button
+      type="button"
+      class="create-task-button bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+    >
+      Add Task
+    </button>
+
+    <button
+      type="button"
+      class="create-column bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+    >
+      Add Column
+    </button>
+
+    <div class="flex flex-row overflow-auto" id="column-div">
+      <ul id="sortable1" class="list m-2 w-96 bg-red-300 text-4xl">
+        <h2 class="w-96">Todo</h2>
       </ul>
 
-      <ul id="sortable2" class="list w-96 bg-red-100 text-4xl">
-        Doing
+      <ul id="sortable2" class="list m-2 w-96 bg-red-100 text-4xl">
+        <h2 class="w-96">Doing</h2>
       </ul>
 
-      <ul id="sortable3" class="list w-96 bg-red-200 text-4xl">
-        Done
+      <ul id="sortable3" class="list m-2 w-96 bg-red-200 text-4xl">
+        <h2 class="w-96">Done</h2>
       </ul>
     </div>
-
-    <button type="button" id="test" class="bg-pink-500">Test</button>
   </body>
 </html>
