@@ -1,17 +1,19 @@
 $(function () {
+  //Import Widget
   $.getScript("widget.js", function () {});
 
-  //Code for creating list and tasks
+  //Creates lists
   $(".list").sortable({
     connectWith: ".list",
   });
 
   let taskID = 1; //For taskCards
 
+  //Creates new taskCards on click
   $(".create-task-button").on("click", function () {
     $(this).effect("highlight", "slow");
 
-    //Creates DOM components
+    //Creates DOM components for taskCard
     var string = "";
     string += `<div class="tabs bg-red-50 w-80 m-7 text-lg" id="tabs${taskID}" >`;
     string += `<ul>`;
@@ -23,7 +25,7 @@ $(function () {
 
     $("#sortable1").append(string);
 
-    //Creates Dialog
+    //Creates Dialog for taskCard
     $("." + taskID).dialog({
       autoOpen: false,
       show: {
@@ -32,13 +34,13 @@ $(function () {
       },
     });
 
-    //Creates Tabs
+    //Creates Tabs for taskCard
     $(".tabs").tabs();
 
-    //Create Datepicker
+    //Create Datepicker for taskCard
     $(".datepicker").datepicker();
 
-    //Custome Widget
+    //Adds Custome color widget for taskCard
     $(`#colorButton${taskID}`).click(function () {
       $(this).parent().parent().colors();
     });
@@ -55,6 +57,7 @@ $(function () {
     });
   });
 
+  //Adds new columns
   $(".create-column").on("click", function () {
     $("#column-div").append(
       `<ul class="list m-2 w-96 bg-red-100 text-4xl"><h2 class="w-96">Custome</h2></ul>`

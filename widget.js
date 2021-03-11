@@ -12,7 +12,7 @@ $.widget("custom.colors", {
     this.changer = this.element.find("#tabs-1").find("button");
 
     this._on(this.changer, {
-      click: "random",
+      click: "colorPicker",
     });
 
     this._refresh();
@@ -33,7 +33,7 @@ $.widget("custom.colors", {
     this._trigger("change");
   },
 
-  random: function (event) {
+  colorPicker: function (event) {
     prevColor = this.element[0].style.backgroundColor;
 
     if (prevColor === "rgb(255, 0, 0)")
@@ -57,7 +57,7 @@ $.widget("custom.colors", {
         blue: 0,
       };
 
-    if (this._trigger("random", event, colors) !== false) {
+    if (this._trigger("colorPicker", event, colors) !== false) {
       this.option(colors);
     }
   },
