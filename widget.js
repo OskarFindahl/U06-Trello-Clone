@@ -9,8 +9,6 @@ $.widget("custom.colors", {
   },
 
   _create: function () {
-    this.element.addClass("custom-colorize");
-
     this.changer = this.element.find("#tabs-1").find("button");
 
     this._on(this.changer, {
@@ -36,11 +34,28 @@ $.widget("custom.colors", {
   },
 
   random: function (event) {
-    var colors = {
-      red: Math.floor(Math.random() * 256),
-      green: Math.floor(Math.random() * 256),
-      blue: Math.floor(Math.random() * 256),
-    };
+    prevColor = this.element[0].style.backgroundColor;
+
+    if (prevColor === "rgb(255, 0, 0)")
+      var colors = {
+        red: 0,
+        green: 255,
+        blue: 0,
+      };
+
+    if (prevColor === "rgb(0, 255, 0)")
+      var colors = {
+        red: 0,
+        green: 0,
+        blue: 255,
+      };
+
+    if (prevColor === "rgb(0, 0, 255)")
+      var colors = {
+        red: 255,
+        green: 0,
+        blue: 0,
+      };
 
     if (this._trigger("random", event, colors) !== false) {
       this.option(colors);

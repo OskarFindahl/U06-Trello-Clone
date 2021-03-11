@@ -13,7 +13,7 @@ $(function () {
 
     //Creates DOM components
     var string = "";
-    string += `<div class="tabs bg-red-50 w-80 m-7 text-lg" id="tabs${taskID}">`;
+    string += `<div class="tabs bg-red-50 w-80 m-7 text-lg" id="tabs${taskID}" >`;
     string += `<ul>`;
     string += `<li><a href="#tabs-1">Tab 1</a></li><li><a href="#tabs-2">Tab 2</a></li><li><a href="#tabs-3">Tab 3</a></li>`;
     string += `</ul>`;
